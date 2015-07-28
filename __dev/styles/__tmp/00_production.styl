@@ -1,0 +1,218 @@
+/* layout
+========================================================================== */
+body
+  padding-top: 50px;
+  position: relative
+  min-height: 100%
+  border-box()
+
+html
+  height: 100%
+
+.starter-template
+  padding: 40px 0
+section
+  padding-bottom 100px
+.bs-docs-footer
+  padding 10px 0
+  position: absolute
+  left 0
+  bottom 0
+  width 100%
+  background #eee
+  color: #767676;
+  border-top: 1px solid #e5e5e5;
+pre
+  margin-bottom 50px
+
+base-font()
+	font-family: Arial, sans-serif;
+	font-size 14px
+	color #383435
+content-center(w = 100%, h = w, important = false )
+	important = (important == true ? !important : )
+	position relative
+	width w important
+	height h important
+
+	> *
+		position absolute
+		top 0 important
+		bottom 0 important
+		left 0 important
+		right 0 important
+		margin auto important
+		max-height 100%
+		max-width 100%
+size(w, h = w)
+	width w
+	height h
+	
+border-box()
+	box-sizing padding-box
+	box-sizing border-box
+	
+background-clip()
+	background-clip padding-box
+
+
+// in css -> images("test.png")
+images(file)
+	url( $img_path + file )
+	
+trans()
+	transition all 0.2s
+
+trans-none()
+	transition all 0s
+clear()
+	&:after
+		content ''
+		display table
+		clear both
+
+// in css -> columns(5)
+columns(count)
+	.column-{count}
+		width floor( (95% / count), 1 )
+		display inline-block
+		vertical-align top
+
+// in css -> width-perc(15)
+width-perc(perc)
+	.perc-{perc}
+		width: (perc)%
+		
+
+// in css -> blur(20)
+blur(px)
+	filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius="' + px + '")')
+	-webkit-filter unquote('blur(' + px + 'px)')
+	-o-filter unquote('blur(' + px + 'px)')
+	-ms-filter unquote('blur(' + px + 'px)')
+	-moz-filter unquote('blur(' + px + 'px)')
+	filter unquote('blur(' + px + 'px)')
+
+// in css -> opacity(0.2) or  opacity(20)
+opacity(val)
+	if val > 1
+		val = val/100
+	opacity val
+	zoom 1
+	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity="' + val*100 + '")')
+
+
+// in css -> background-size(cover)
+background-size(value)
+	background-size value
+
+
+// in css with inset -> box-shadow-inset(0, 0, 10px, rgba(0,0,0,0.5))
+// in css  -> box-shadow(0, 0, 10px, rgba(0,0,0,0.5))
+box-shadow-inset(x, y, r, color)
+	box-shadow inset x y r color
+
+box-shadow-outer( x, y, r, color)
+	box-shadow x y r color
+
+
+// in css with inset -> text-shadow(5px, 1px, 5px, #000)
+text-shadow(x, y, r, color)
+	text-shadow x y r color
+
+// in css with inset -> gradient-linear(#000, #fff)
+gradient-linear(top, bottom)
+	background linear-gradient(top, bottom)
+
+// in css -> text-ellipsis(100px) or text-ellipsis(80%)
+_text-overflow(width_value = 'none')
+	white-space nowrap
+	text-overflow ellipsis
+	line-height: normal;
+	overflow hidden
+	if width_value != 'none'
+		width width_value
+.info-block
+	position relative
+	margin-bottom 40px
+	text-align center
+	&-img
+		max-width 100%
+	&-desc
+		font-size 12px
+		padding 15px
+		background #fff
+		overflow hidden
+		background rgba(255, 255, 255, 0.9)
+		border 15px solid rga(121, 155, 188)
+		border 15px solid rgba(121, 155, 188, 0.5)
+		position absolute
+		z-index 1;
+		border-box()
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		max-width: 80%;
+		max-height: 40%;
+		text-align left
+		margin: auto;
+.list-info
+	position relative
+	margin-bottom 40px
+	&-ctn
+		font-size 0
+		line-height 0
+		margin 0 -2%
+	&-item
+		display inline-block
+		vertical-align top
+		width 21%
+		font-size 12px
+		line-height normal
+		border 10px solid #336699
+		border-box()
+		padding 10px
+		background #ffffff
+		margin 0 2% 25px
+.list-news
+	position relative
+	margin-bottom 40px
+	&-ctn
+		display table
+		margin-bottom 50px
+	&-item
+		display table-cell
+		vertical-align top
+		padding 0 0 0 80px
+		&:first-child
+			padding 0
+	&-desc
+		border: 10px solid #369;
+		padding 15px 20px
+		border-box()
+		position relative
+		&:before
+			content ''
+			display block
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 40px 40px 40px 0;
+			border-color: transparent #336699 transparent transparent;
+			position: absolute;
+			top 15px
+			left -50px
+		&:after
+			content ''
+			display block
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 40px 40px 40px 0;
+			border-color: transparent #fff transparent transparent;
+			position absolute
+			top 15px
+			left -35px
+
+
