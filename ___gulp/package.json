@@ -1,10 +1,14 @@
 {
-    "name": "test-task-GRANAT",
+    "name": "docs",
     "version": "0.0.1",
-    "description": "",
+    "description": "docs for working designers, programmers and other",
     "main": "index.js",
     "author": "ennet",
     "license": "ISC",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ennett50/__docs-granat.git"
+    },
     "devDependencies": {
         "coffee-script": "^1.8.0",
         "gulp": "^3.8.9",

@@ -1,0 +1,155 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Документация для дизайнеров"
+block title
+	title=currentPageTitle
+block block-content
+	h2 Сетка
+	p Параметры для создания сетки следующие:
+	ul
+		li 12 колонок
+		li ширина колонки 70px
+		li расстояние между колонками 30px
+		li ширина основного контента 1170px
+
+	p Есть уже готовый паттерн для фотошопа: <a href="images/18-30-70-0-photoshop.pab"
+		|target="_blank"><b>Скачать</b></a>
+	p Сгенирировать сетку с нужными параметрами можно здесь <a href="http://modulargrid.org/#app" target="_blank">http://modulargrid.org/#app</a>
+	p Данная сетка сделана на основе <a href="http://www.oneskyapp.com/ru/docs/bootstrap/css/#grid"
+		|target="_blank">bootstrap.ru</a>
+
+
+	hr
+
+	h2 Заголовки (h1-h6)
+	p Все наши сайты в основном продвигаются. Важно правильно использовать заголовки на странице.
+	ol
+		li <b>Тег H1 должен использоваться только один раз.</b> То есть он должен выделяться по размерам и быть
+		| всегда первым на странице. Желательно, чтобы на каждой странице был h1 заголовок.
+		li Заголовик другого уровня могут употребляться несколько раз.
+
+	p Все заголовки должны быть как бы вложены друг в друга:
+	p
+		img(src="images/razmetka.gif" alt="")
+	p <b>Также визуально все тэги тоже должны повторять эту вложенность</b> (не может быть такого, что h2 такой же
+		|как и h4 или h5 больше чем h2):
+	div.jumbotron
+		div.container
+			h1 h1. Заголовок Bootstrap
+			h2 h2. Заголовок Bootstrap
+			h3 h3. Заголовок Bootstrap
+			h4 h4. Заголовок Bootstrap
+			h5 h5. Заголовок Bootstrap
+			h6 h6. Заголовок Bootstrap
+
+	hr
+	h2 Оформление текста
+	p <b>Пожелание:</b> хотелось бы, чтобы шрифт на текстовых страницах был основным (цвет, размер, межстрочный
+		|интервал). Зачем это нужно? Например, на странице Каталога есть текст. По умолчанию текст основного сайта у
+		|нас черный, а описание каталога - серым. Хотелось бы, чтобы он был идентичным, чтобы не плодить шаблоны
+		|программисту и не обвешивать дополнительными классами.
+	p По умолчанию <b>упорядочные списки</b> выглядят так:
+	ul
+		li Lorem ipsum dolor sit amet
+		li Consectetur adipiscing elit
+		li Integer molestie lorem at massa
+		li Facilisis in pretium nisl aliquet
+		li Nulla volutpat aliquam velit
+	p По умолчанию <b>нумерованные списки</b> выглядят так:
+	ol
+		li Lorem ipsum dolor sit amet
+		li Consectetur adipiscing elit
+		li Integer molestie lorem at massa
+		li Facilisis in pretium nisl aliquet
+		li Nulla volutpat aliquam velit
+
+	p Также помним, что у нас есть <b>таблица</b>. Подробнее о видах таблице можно посмотреть <a href=""
+		|target="_blank">здесь</a>. По умолчанию она выглядит так:
+	table.table
+		tr
+			th #
+			th Имя
+			th Фамилия
+			th Имя пользователя
+		tr
+			td 1
+			td Марк
+			td Отто
+			td @mdo
+		tr
+			td 2
+			td Джейкоб
+			td Торнтон
+			td @fat
+		tr
+			td 3
+			td Ларри
+			td Птица
+			td @twitter
+
+	hr
+	h2 Элементы формы
+	p Стоит помнить о всех элементах формы. Также по стилизации они должны быть одинаковыми, то есть, напрмиер,
+		|border checkbox`а у нас серый, а border radio тоже должен быть серым, а не другим цветом. Все одинаково
+	p <b>Вид формы по умолчанию</b>:
+	form.form-horizontal
+		.form-group.has-error
+			label.col-sm-2.control-label(for='inputName3') Name
+			.col-sm-10
+				input#inputName3.form-control(type='email', placeholder='Name')
+
+
+		.form-group.has-success
+			label.col-sm-2.control-label(for='inputEmail3') Email
+			.col-sm-10
+				input#inputEmail3.form-control(type='email', placeholder='Email')
+
+		.form-group
+			label.col-sm-2.control-label(for='inputPassword3') Password
+			.col-sm-10
+				input#inputPassword3.form-control(type='password', placeholder='Password')
+
+		.form-group
+			label.col-sm-2.control-label(for='select1') Select
+			.col-sm-10
+				select.form-control#select1
+					option
+					option Lorem ipsum dolor sit amet
+					option Consectetur adipiscing elit
+					option Nulla volutpat aliquam velit
+		.form-group
+			label.col-sm-2.control-label(for='textarea1') Message
+			.col-sm-10
+				textarea.form-control#textarea1
+		.form-group
+			label.col-sm-2.control-label Checkbox
+			.col-sm-10
+				.checkbox
+					label
+						input(type='checkbox', value='')
+						|     Option one is this and that—be sure to include why it's great
+				.checkbox.disabled
+					label
+						input(type='checkbox', value='', disabled='')
+						|     Option two is disabled
+		.form-group
+			label.col-sm-2.control-label Radio
+			.col-sm-10
+				.radio.has-error
+					label
+						input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+						|     Option one is this and that—be sure to include why it's great
+				.radio
+					label
+						input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+						|     Option two can be something else and selecting it will deselect option one
+				.radio.disabled
+					label
+						input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
+						|     Option three is disabled
+
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				div.alert.alert-danger Что-то пошло не так...
+				br
+				button.btn.btn-primary(type='submit') Sign in
