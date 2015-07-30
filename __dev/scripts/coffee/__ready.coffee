@@ -15,7 +15,7 @@ $(document).ready =>
 
     topW = $(window).scrollTop()
     $('.items-list').each (i) ->
-      if $(this).position().top <= topW + 10
+      if $(this).position().top <= topW + 80
         $('.js-scroll-to .navbar-brand.__current').removeClass '__current'
         $('.js-scroll-to .navbar-brand').eq(i).addClass '__current'
 
